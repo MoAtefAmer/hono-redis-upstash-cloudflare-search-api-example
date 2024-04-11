@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "wrangler deploy --minify --name fast-search-api src/app/api/[[...route]]/route.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
@@ -15,6 +16,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^1.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "hono": "^4.2.3",
     "next": "14.1.4",

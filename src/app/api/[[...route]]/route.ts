@@ -1,5 +1,4 @@
-import { Redis } from "@upstash/redis";
-import { Env } from "./../../../../node_modules/hono/dist/types/types.d";
+import { Redis } from "@upstash/redis/cloudflare";
 import { Hono } from "hono";
 import { env } from "hono/adapter";
 import { handle } from "hono/vercel";
@@ -30,7 +29,7 @@ app.get("/search", async (c) => {
 
     const queryInput = c?.req?.query("q");
     const query = queryInput ? queryInput.toUpperCase() : null;
-    // console.log("query :>> ", query);
+
     if (!query) {
       return c.json(
         {
@@ -46,7 +45,6 @@ app.get("/search", async (c) => {
 
     if (rank !== null && rank !== undefined) {
       const temp = await redis.zrange<string[]>("terms", rank, rank + 100);
-      console.error('temp :>> ', temp);
 
       for (const el of temp) {
         if (!el.startsWith(query)) {
@@ -76,7 +74,7 @@ app.get("/search", async (c) => {
 });
 
 export const GET = handle(app);
-// export const POST = handle(app);
+
 
 // to deploy to cloudflare, we need to export the app as never
-export default app as never;
+export default app as never
