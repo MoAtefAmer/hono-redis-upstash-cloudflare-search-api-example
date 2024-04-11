@@ -28,8 +28,9 @@ app.get("/search", async (c) => {
       url: UPSTASH_REDIS_REST_URL,
     });
 
-    const query = c?.req?.query("q");
-    console.log("query :>> ", query);
+    const queryInput = c?.req?.query("q");
+    const query = queryInput ? queryInput.toUpperCase() : null;
+    // console.log("query :>> ", query);
     if (!query) {
       return c.json(
         {
