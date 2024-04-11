@@ -16,7 +16,6 @@ export default function Home() {
 
       const res = await fetch(`/api/search?q=${input}`);
       const data = await res.json();
-      console.log('data :>> ', data);
       setSearchResults(data);
 
 

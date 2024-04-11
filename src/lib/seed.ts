@@ -3,11 +3,9 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-
-
 const redis = new Redis({
-  url: "https://dear-python-49796.upstash.io",
-  token: process.env.REDIS_UPSTASH_TOKEN,
+  url: process.env.UPSTASH_REDIS_REST_URL as string,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
 
 const countryList = [
