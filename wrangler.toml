@@ -2,5 +2,5 @@ name = 'fastapi'
 compatibility_date = "2024.04.11"
 
 [vars]
-UPSTASH_REDIS_REST_TOKEN = 'AcKEASQgNjI2NmQ3NWYtMWZjNC00ZWI0LTg5MjktZTQ3YmNlZmY0MDAyNTI4NWJlMGY1NjQwNDNkNjhiMGU4ZWE4NThkNzliZjE='
-UPSTASH_REDIS_REST_URL = 'https://dear-python-49796.upstash.io'
+UPSTASH_REDIS_REST_TOKEN = 'upstash_token'
+UPSTASH_REDIS_REST_URL = 'redis_url'
